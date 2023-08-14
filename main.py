@@ -1,11 +1,29 @@
 from flask import Flask
-from markupsafe import escape
+from database import db
+from flask_migrate import Migrate
+
+# Blueprints
+from users import bp_users
 
 app = Flask(__name__)
 
+conection_with_database = 'sqlite:///database.sqlite.db'
+
+# configs
+app.config['SECRET_KEY'] = 'minha-chave'
+app.config['SQLALCHEMY_DATABASE_URI'] = conection_with_database
+app.config['SQLALCHEMY_TRACKMODIFICATIONS']= False
+
+# Register Blueprints
+app.register_blueprint(bp_users, url_prefix='/users')
+
+db.init_app(app)
+
+migrate = Migrate(app, db)
+
 @app.route("/")
 def index():
-    return "Olá mundo"
+    return "Página principal"
 
 # error handler
 @app.errorhandler(404)

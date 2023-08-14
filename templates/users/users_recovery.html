@@ -1,0 +1,17 @@
+<html lang="pt-br">
+<head>
+    <title> Usuários </title>
+</head>
+<body>
+
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }}</li>
+            <a href="/users/update/{{user.id}}"> Editar </a>
+            <a href="/users/delete/{{user.id}}"> Excluir </a>
+        {% endfor %}
+
+    </ul>
+    
+</body>
+</html>
