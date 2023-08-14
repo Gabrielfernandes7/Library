@@ -24,6 +24,12 @@ def create():
 @bp_users.route("/recovery")
 def recovery():
     users = User.query.all()
+
+    users_quantity = User.query.count()
+
+    if users_quantity == 0:
+        return render_template("users_notfound.html")
+
     return render_template("users_recovery.html", users=users)
 
 @bp_users.route("/update/<int:id>", methods=['GET', 'POST'])
