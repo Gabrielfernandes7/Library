@@ -1,0 +1,13 @@
+<html>
+
+<body>
+    <p>Você tem certeza que quer excluir o livro {{ b.title }}</p>
+
+    <form method='post' action='/books/delete/{{b.book_id}}'>
+        <input type="submit" value="Sim">
+    </form>
+
+    <a href="/books/recovery">Cancelar</a>
+</body>
+
+</html>
