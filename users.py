@@ -4,7 +4,8 @@ from database import db
 
 bp_users = Blueprint(
     "users", __name__, 
-    template_folder="templates/users")
+    template_folder="templates/users"
+)
 
 @bp_users.route("/create", methods=['GET', 'POST'])
 def create():

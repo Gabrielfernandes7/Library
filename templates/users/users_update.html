@@ -1,26 +1,15 @@
 <html>
-    <body>
-        <form
-            method='post'
-            action='/users/update/{{u.id}}'
-        >
-            Nome: 
-            <input 
-                type="text" 
-                name="name" 
-                id="name"
-                value="{{u.name}}"
-                /> <br />
 
-            Email: 
-            <input 
-                type="email" 
-                name="email" 
-                id="email"
-                value="{{u.email}}"
-                /> <br />
+<body>
+    <form method='post' action='/users/update/{{u.id}}'>
+        Nome:
+        <input type="text" name="name" id="name" value="{{u.name}}" /> <br />
 
-            <input type="submit" value="Atualizar">
-        </form>
-    </body>
+        Email:
+        <input type="email" name="email" id="email" value="{{u.email}}" /> <br />
+
+        <input type="submit" value="Atualizar">
+    </form>
+</body>
+
 </html>
