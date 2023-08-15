@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect
-from models.models import User
+from app.models.models import User
 from database import db
 
 bp_users = Blueprint(

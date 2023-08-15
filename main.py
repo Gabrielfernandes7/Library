@@ -3,8 +3,8 @@ from database import db
 from flask_migrate import Migrate
 
 # Blueprints
-from users import bp_users
-from books import bp_books
+from app.users import bp_users
+from app.books import bp_books
 
 app = Flask(__name__)
 
