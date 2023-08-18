@@ -15,7 +15,7 @@ def create():
     if request.method == 'POST':
         title = request.form.get('title')
 
-    b = Books(title)
+    b = Book(title)
 
     db.session.add(b)
     db.session.commit()
