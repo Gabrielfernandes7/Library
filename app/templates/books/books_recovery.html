@@ -9,8 +9,8 @@
     <ul>
         {% for book in books %}
             <li>{{ book.title }}</li>
-            <a href="/books/update/{{book.book_id}}"> Editar </a>
-        <a href="/books/delete/{{book.book_id}}"> Excluir </a>
+            <a href="/books/update/{{book.id}}"> Editar </a>
+        <a href="/books/delete/{{book.id}}"> Excluir </a>
         {% endfor %}
 
     </ul>

@@ -1,0 +1,28 @@
+<html lang="pt-br">
+
+<head>
+    <title> Alugados </title>
+</head>
+
+<body>
+
+    <ul>
+        {% for rent in rents %}
+            <li>
+                {{ rent.id }}
+
+                {{ rent.user.name }}
+                
+                {{ rent.book.title }}
+
+                {{ rent.date_rent }}
+            </li>
+            <a href="/rents/update/{{rent.id}}"> Editar </a>
+            <a href="/rents/delete/{{rent.id}}"> Excluir </a>
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>

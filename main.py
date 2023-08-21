@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 # Blueprints
 from app.users import bp_users
 from app.books import bp_books
+from app.rent import bp_rents
 
 app = Flask(__name__)
 
@@ -18,6 +19,7 @@ app.config['SQLALCHEMY_TRACKMODIFICATIONS']= False
 # Register Blueprints
 app.register_blueprint(bp_users, url_prefix='/users')
 app.register_blueprint(bp_books, url_prefix='/books')
+app.register_blueprint(bp_rents, url_prefix='/rents')
 
 db.init_app(app)
 
