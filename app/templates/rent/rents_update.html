@@ -1,0 +1,16 @@
+<html>
+
+<body>
+    <form method='post' action='/rents/update/{{r.id}}'>
+
+        Usuário ID: <input type="text" name="user_id" id="user_id" value="{{r.user_id}}" /> <br />
+
+        Livro ID: <input type="text" name="book_id" id="book_id" value="{{r.book_id}}" /> <br />
+
+        Data: {{ r.date_rent }}
+
+        <input type="submit" value="Atualizar">
+    </form>
+</body>
+
+</html>

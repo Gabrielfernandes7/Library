@@ -1,0 +1,17 @@
+<html>
+
+<body>
+    <p>
+        Você tem certeza que quer excluir o aluguel: <br />
+        Dia: {{ r.date_rent }} <br />
+        Aluguel ID: {{ r.id }}
+    </p>
+
+    <form method='post' action='/rents/delete/{{ r.id }}'>
+        <input type="submit" value="Sim">
+    </form>
+
+    <a href="/rents/recovery">Cancelar</a>
+</body>
+
+</html>
