@@ -1,22 +1,70 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <title> Criar Livro </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Livro</title>
+    <!-- Inclua o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #111;
+            /* Cor escura que remete ao espaço */
+            color: #fff;
+            /* Texto branco para contrastar com o fundo escuro */
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Fundo semi-transparente */
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #fff;
+            color: #fff;
+        }
+
+        input[type="text"]:focus {
+            box-shadow: none;
+            border-color: #00bfff;
+            /* Azul claro para realçar */
+        }
+
+        input[type="submit"] {
+            background-color: #00bfff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007acc;
+            /* Tom de azul mais escuro no hover */
+        }
+    </style>
 </head>
 
 <body>
-
-    <form 
-        method='post' 
-        action="/books/create">
-
-        Título: <input type="text" name="title" id="title" /> <br>
-
-        <input type="submit" value="Cadastrar" />
-
-    </form>
-
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-md-6">
+                <form method="post" action="/books/create" class="p-4">
+                    <h2 class="mb-4">Criar Livro</h2>
+                    <div class="form-group">
+                        <label for="title">Título:</label>
+                        <input type="text" name="title" id="title" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

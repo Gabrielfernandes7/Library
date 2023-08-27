@@ -1,20 +1,60 @@
 <html lang="pt-br">
 
 <head>
-    <title> Livros </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+    <!-- Incluir arquivos CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        a {
+            color: #1f8fff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        a:hover {
+            color: #0d6efd;
+        }
+    </style>
 </head>
 
 <body>
-
-    <ul>
-        {% for book in books %}
-            <li>{{ book.title }}</li>
-            <a href="/books/update/{{book.id}}"> Editar </a>
-        <a href="/books/delete/{{book.id}}"> Excluir </a>
-        {% endfor %}
-
-    </ul>
-
+    <div class="container">
+        <ul>
+            {% for book in books %}
+            <li>
+                {{ book.title }}
+                <a href="/books/update/{{book.id}}">Editar</a>
+                <a href="/books/delete/{{book.id}}">Excluir</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 
 </html>

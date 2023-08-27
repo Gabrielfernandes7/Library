@@ -1,15 +1,64 @@
-<html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Usuário</title>
+    <!-- Incluir arquivos CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #1f8fff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0d6efd;
+        }
+    </style>
+</head>
 
 <body>
-    <form method='post' action='/users/update/{{u.id}}'>
-        Nome:
-        <input type="text" name="name" id="name" value="{{u.name}}" /> <br />
-
-        Email:
-        <input type="email" name="email" id="email" value="{{u.email}}" /> <br />
-
-        <input type="submit" value="Atualizar">
-    </form>
+    <div class="container">
+        <form method="post" action="/users/update/{{u.id}}">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" name="name" id="name" value="{{u.name}}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" id="email" value="{{u.email}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+    </div>
 </body>
 
 </html>
