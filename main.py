@@ -2,12 +2,21 @@ from flask import Flask
 from database import db
 from flask_migrate import Migrate
 
+# Swagger
+from flask_restx import Resource, Api
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 # Blueprints
 from app.users import bp_users
 from app.books import bp_books
 from app.rent import bp_rents
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app)
+
+api = Api(app, version='1.0', title='API de Exemplo',
+    description='Uma simples API de exemplo com Flask e Swagger')
+ns = api.namespace('todos', description='TODO operations')
 
 conection_with_database = 'sqlite:///database.sqlite.db'
 
@@ -28,6 +37,12 @@ migrate = Migrate(app, db)
 @app.route("/")
 def index():
     return "Página principal"
+
+@ns.response(200, "successful")
+@ns.route('/hello', endpoint='todo_ep')
+class TodoSimple(Resource):
+    def get(self):
+        return "hello"
 
 # error handler
 @app.errorhandler(404)

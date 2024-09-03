@@ -15,6 +15,7 @@ Este projeto é uma api desenvolvida com Flask, SQLAlchemy (SQLite3), Migrate e 
     Flask
     Flask-SQLAlchemy
     SQLite3
+    Flask-RESTX
 
 Para baixar essas bibliotecas basta executar o comando a seguir:
 ```bash
